@@ -1,0 +1,20 @@
+#all subfolders named __pycache__ will be ignored
+#all figures, meaning pdfs and pngs, will be ignored
+.ruff_cache
+.venv
+*.pdf
+*.png
+.ruff_cache
+.pre-commit-config.yaml
+*.h5ad
+*.npy
+*.npz
+*.fcs
+*.xlsx
+*.wsp
+*.pkl
+**/__pycache__
+data/T Zell Wanderung
+data/Wongetal
+.vscode
+#dont include any pycache folder
