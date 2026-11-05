@@ -1,10 +1,17 @@
 # CellVADIS
-Code needed to reproduce figures of CellVADIS manuscript (Link).
-Simulate and infer immune-cell trafficking dynamics from single-cell data. The codebase combines:
+Code needed to reproduce figures of the CellVADIS manuscript
+* Wicker L., Varga S., Graw F.: **CellVADIS: Inferring cross-tissue immune cell trafficking dynamics from single-cell snapshots**,(doi).
+
+
+The codebase combines:
 
 - a stochastic mathematical model allowing for generation of synthetic snapshot data of marker-driven cell migration and differentiation,
 - Evaluation workflows for trafficking prediction based on simulated data with known ground truth,
-- experimental analysis notebooks for real datasets (Wong et al. 2016 and Conde et al. 2022).
+- experimental analysis notebooks for real datasets (Wong et al. 2016 and Conde et al. 2022),
+
+to simulate and infer immune-cell trafficking dynamics from single-cell data.
+
+If you are interested in applying CellVADIS to your own data, please use https://github.com/GrawLab/CellVADIS
 
 
 ## Project overview
