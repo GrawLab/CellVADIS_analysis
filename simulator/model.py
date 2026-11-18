@@ -9,7 +9,6 @@ from multiprocessing import Pool
 # 3: Spleen
 # 4: Bone marrow
 # 5: Gut
-# 0: Dead cells?
 
 
 def simulate_model(
@@ -23,7 +22,7 @@ def simulate_model(
     use_gpu=False,
 ):
     """
-    Simulates marker-driven (CD8+) T cell differentiation, proliferation and migration.
+    Simulates marker-driven T cell differentiation and migration.
 
     Parameters:
     - params: A dictionary containing parameter names and their values used for the simulation.

@@ -15,15 +15,13 @@ def cd44_reaction(
     dt,
 ):
     """
-    Calculate the CD44 reaction based on the previous expression array and activation status.
+    Calculate the CD44 reaction based on the previous expression array.
 
     Parameters:
     - expression_prev: Previous expression values from expression_matrix, should be shape (n_cells,)
-    - activated: Boolean mask indicating activated cells, should be shape (n_cells,)
     - location: current location of cells, should be shape (n_cells,).
     - p_cd44_base: Base parameter for CD44.
     - cd44_base_rate_multiplier: Multiplier for base CD44 parameter.
-    - p_cd44_activated: Parameter for activated CD44.
     - d_cd44: Optional parameter for CD44 differentiation, default is 0.
     - cd44_max: Maximum value for CD44 expression.
     - dt: Time step for the reaction.
@@ -58,7 +56,7 @@ def ccr7_reaction(
     dt,
 ):
     """
-    Calculate the CCR7 reaction based on the previous expression array and death status.
+    Calculate the CCR7 reaction based on the previous expression array.
 
     Parameters:
     - expression_prev: Previous expression values from expression_matrix, should be shape (n_cells,)
@@ -126,7 +124,7 @@ def s1pr1_reaction(
     dt,
 ):
     """
-    Calculate the S1PR1 reaction based on the previous expression array and death status.
+    Calculate the S1PR1 reaction based on the previous expression array.
 
     Parameters:
     - expression_prev: Previous expression values from expression_matrix, should be shape (n_cells,)
@@ -201,7 +199,7 @@ def cxcr4_reaction(
     dt,
 ):
     """
-    Calculate the CXCR4 reaction based on the previous expression array and death status.
+    Calculate the CXCR4 reaction based on the previous expression array.
 
     Parameters:
     - expression_prev: Previous expression values from expression_matrix, should be shape (n_cells,)
@@ -252,7 +250,7 @@ def a4b7_reaction(
     expression_prev, location, p_a4b7, a4b7_base_rate_multiplier, d_a4b7, dt
 ):
     """
-    Calculate the a4b7 reaction based on the previous expression array and death status.
+    Calculate the a4b7 reaction based on the previous expression array.
 
     Parameters:
     - expression_prev: Previous expression values from expression_matrix, should be shape (n_cells,)
@@ -280,7 +278,7 @@ def a4b7_reaction(
 
 def cd69_reaction(expression_prev, location, p_cd69, p_cd69_multiplier, d_cd69, dt):
     """
-    Calculate the CD69 reaction based on the previous expression array and death status.
+    Calculate the CD69 reaction based on the previous expression array.
 
     Parameters:
     - expression_prev: Previous expression values from expression_matrix, should be shape (n_cells,)
@@ -306,7 +304,7 @@ def cd69_reaction(expression_prev, location, p_cd69, p_cd69_multiplier, d_cd69, 
 
 def cd62l_reaction(expression_prev, location, p_cd62l, p_cd62l_multiplier, d_cd62l, dt):
     """
-    Calculate the CD62L reaction based on the previous expression array and death status.
+    Calculate the CD62L reaction based on the previous expression array.
 
     Parameters:
     - expression_prev: Previous expression values from expression_matrix, should be shape (n_cells,)

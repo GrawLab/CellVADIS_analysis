@@ -6,7 +6,6 @@ from multiprocessing import Pool
 # 3: Spleen
 # 4: Bone marrow
 # 5: Gut
-# 0: Dead cells?
 
 
 def simulate_model(
@@ -20,7 +19,7 @@ def simulate_model(
     use_gpu=False,
 ):
     """
-    Simulates marker-driven (CD8+) T cell differentiation, proliferation and migration.
+    Simulates marker-driven T cell differentiation and migration.
 
     Parameters:
     - params: A dictionary containing parameter names and their values used for the simulation.
@@ -28,10 +27,8 @@ def simulate_model(
     - n_cells: The number of cells in the simulation.
     - n_cells_max: The maximum number of cells allowed in the simulation.
     - return_samples: If provided, the function will only store and return samples at specified time points.
-                        If None, all time points will be stored. // gibt eine zugeschnitte abtastrate (zeitpunkte) zurüc
+                        If None, all time points will be stored.
     - dt: Time step for the simulation in hours.
-    - simulate_cell_processes: If False, cell processes like activation, proliferation, and death are skipped
-                                (used for testing migration only). #hier der Fall
     - simulate_trafficking: If False, migration between compartments is skipped (used for testing cell processes only).
     - use_gpu: If True, the simulation will utilize GPU acceleration via CuPy. Ensure that a compatible GPU is available.
 
@@ -116,7 +113,7 @@ def simulate_model(
     CD44_low_multiplier_cells = base_rate_multipliers[CD44_index, :n_cells] < 1
     base_rate_multipliers[CCR7_index, :n_cells] = sample_bimodal(
         n_cells,
-        weight=params["ccr7_base_rate_multiplier_weight"],  # 0.30
+        weight=params["ccr7_base_rate_multiplier_weight"],  
         mean_lognormal=-3,
         sigma_lognormal=0.5,
         mean_normal=1.7,
@@ -129,7 +126,7 @@ def simulate_model(
             scale=0.3,
             size=int(
                 np.sum(CD44_low_multiplier_cells)
-            ),  # low multiplier ->über N.Ver. Wert zugewiesen
+            ),  
         )
     )
 
@@ -243,7 +240,7 @@ def simulate_model(
         # MARKER DYNAMICS
         # CD44
         current_expression_matrix[i, :, CD44_index] = (
-            diff_funcs.cd44_reaction(  # veränderter CD44 expression
+            diff_funcs.cd44_reaction( 
                 current_expression_matrix[i - 1, :, CD44_index],
                 current_expression_matrix[i - 1, :, location_index],
                 params["p_cd44_base"],
@@ -255,11 +252,11 @@ def simulate_model(
 
         # Lambda
         current_expression_matrix[i, :, Lambda_index] = diff_funcs.Lambda_reaction(
-            current_expression_matrix[i - 1, :, Lambda_index],  # expression_prev
-            params["p_Lambda_base"],  # p_Lambda
-            current_expression_matrix[i - 1, :, location_index],  # location
-            current_base_rate_multipliers[Lambda_index, :],  # p_Lambda_multiplier
-            params["d_Lambda_base"],  # d_Lambda
+            current_expression_matrix[i - 1, :, Lambda_index],
+            params["p_Lambda_base"], 
+            current_expression_matrix[i - 1, :, location_index],  
+            current_base_rate_multipliers[Lambda_index, :], 
+            params["d_Lambda_base"],  
             dt,  # dt
         )
 
