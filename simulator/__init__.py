@@ -4,8 +4,6 @@ params = {
     "cd44_base_multiplier_sd": 0.4,  # SD for CD44 base rate multiplier
     "cd44_base_rate_multiplier_weight": 0.5,  # Weight for the base rate multiplier in CD44 expression
     "d_cd44_base": 0.1,  # CD44 degradation rate
-    "p_bcl2_base": 0.015,  # Bcl2 expression rate
-    "d_bcl2_base": 0.009,  # Bcl2 degradation rate
     "p_cxcr4_base": 6,  # CXCR4 expression rate
     "cxcr4_base_multiplier_sd": 0.1,  # SD for CXCR4 base rate multiplier
     "cxcr4_base_rate_multiplier_weight": 0.2,  # Weight for the base rate multiplier in CXCR4 expression
