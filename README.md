@@ -1,6 +1,6 @@
 # CellVADIS
 Code needed to reproduce figures of the CellVADIS manuscript
-* Wicker L., Varga S., Graw F.: **CellVADIS: Inferring cross-tissue immune cell trafficking dynamics from single-cell snapshots**,(doi).
+* Wicker L., Varga S., Hasenauer J., Graw F.: **CellVADIS: Inferring cross-tissue immune cell trafficking dynamics from single-cell snapshots**,(doi).
 
 
 The codebase combines:
